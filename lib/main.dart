@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
           title: "Flight Ticket booking App",
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            fontFamily: "Sora",
             scaffoldBackgroundColor: Colors.white,
           ),
           onGenerateRoute: (settings) => onGenerateRoute(settings),

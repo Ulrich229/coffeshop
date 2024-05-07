@@ -89,6 +89,8 @@ flutter:
           weight: 200
         - asset: assets/fonts/Sora/Sora-Medium.ttf
           weight: 500
+        - asset: assets/fonts/Sora/Sora-SemiBold.ttf
+          weight: 600
         - asset: assets/fonts/Sora/Sora-ExtraBold.ttf
           weight: 900
   #
