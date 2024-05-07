@@ -1,7 +1,9 @@
+import 'package:coffeeshop/presentation/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 class OnboardingScreen extends StatelessWidget {
+  static const routeName = "/";
   const OnboardingScreen({super.key});
 
   @override
@@ -95,7 +97,10 @@ class OnboardingScreen extends StatelessWidget {
                         ),
                         const Spacer(),
                         MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(HomeScreen.routeName);
+                          },
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
