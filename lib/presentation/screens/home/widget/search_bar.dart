@@ -55,8 +55,11 @@ class CustomSearchBar extends StatelessWidget {
             child: Container(
               margin: EdgeInsets.all(0.4.w),
               decoration: const BoxDecoration(
-                  color: Color.fromRGBO(198, 124, 78, 1),
-                  borderRadius: BorderRadius.all(Radius.circular(12))),
+                color: Color.fromRGBO(198, 124, 78, 1),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(12),
+                ),
+              ),
               padding: const EdgeInsets.all(10),
               child: InkWell(
                 splashColor:

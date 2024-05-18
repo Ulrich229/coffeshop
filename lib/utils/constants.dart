@@ -4,3 +4,10 @@ const List<String> menuIcons = [
   "Bag",
   "Notification",
 ];
+
+const List<String> coffeTypes = [
+  "Cappuccino",
+  "Machiato",
+  "Latte",
+  "Americano",
+];

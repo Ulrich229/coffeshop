@@ -1,6 +1,10 @@
-import 'package:coffeeshop/presentation/screens/home/widget/search_bar.dart';
+import 'package:coffeeshop/data/models/coffee.dart';
+import 'package:coffeeshop/presentation/screens/home/widget/coffee_item.dart';
+import 'package:coffeeshop/presentation/screens/home/widget/coffee_type_selector.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
+
+import 'package:coffeeshop/presentation/screens/home/widget/search_bar.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -91,7 +95,29 @@ class HomePage extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Container(
-                color: Colors.white,
+                padding: EdgeInsets.symmetric(horizontal: 5.w),
+                color: Colors.grey.shade200,
+                child: Column(
+                  children: [
+                    SizedBox(height: 15.h),
+                    const CoffeTypeSelector(),
+                    Expanded(
+                      child: GridView.builder(
+                        itemCount: coffees.length,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                          childAspectRatio: 6 / 9,
+                          crossAxisSpacing: 2.w,
+                        ),
+                        itemBuilder: (BuildContext context, int index) {
+                          return CoffeeItem(
+                            coffee: coffees[index],
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           ],
@@ -133,16 +159,15 @@ class HomePage extends StatelessWidget {
                 Text(
                   "Buy one get\none FREE",
                   style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20.sp,
-                    backgroundColor: Colors.black
-                  ),
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.sp,
+                      backgroundColor: Colors.black),
                 ),
               ],
             ),
           ),
-        )
+        ),
       ],
     );
   }

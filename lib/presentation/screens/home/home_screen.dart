@@ -60,29 +60,32 @@ class _HomeScreenState extends State<HomeScreen> {
           SizedBox(),
         ],
       ),
-      bottomNavigationBar: Card(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(24),
-        ),
-        elevation: 20,
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(24),
-          child: BottomNavigationBar(
-            elevation: 10,
-            type: BottomNavigationBarType.fixed,
-            selectedFontSize: 0,
-            backgroundColor: Colors.white,
-            items: menuIcons
-                .map(
-                  (menuIcon) => buildBottomNavigationBarItem(
-                    iconPath: "assets/icons/$menuIcon.png",
-                    isSelected: _page == menuIcons.indexOf(menuIcon),
-                    context: context,
-                  ),
-                )
-                .toList(),
-            onTap: navigationTapped,
-            currentIndex: _page,
+      bottomNavigationBar: Container(
+        color: Colors.grey.shade200,
+        child: Card(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          elevation: 20,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(24),
+            child: BottomNavigationBar(
+              elevation: 10,
+              type: BottomNavigationBarType.fixed,
+              selectedFontSize: 0,
+              backgroundColor: Colors.white,
+              items: menuIcons
+                  .map(
+                    (menuIcon) => buildBottomNavigationBarItem(
+                      iconPath: "assets/icons/$menuIcon.png",
+                      isSelected: _page == menuIcons.indexOf(menuIcon),
+                      context: context,
+                    ),
+                  )
+                  .toList(),
+              onTap: navigationTapped,
+              currentIndex: _page,
+            ),
           ),
         ),
       ),
