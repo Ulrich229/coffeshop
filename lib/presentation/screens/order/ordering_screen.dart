@@ -1,4 +1,5 @@
 import 'package:coffeeshop/data/models/coffee.dart';
+import 'package:coffeeshop/presentation/screens/map/map_screen.dart';
 import 'package:coffeeshop/presentation/screens/order/widgets/order_tiny_option_button.dart';
 import 'package:coffeeshop/presentation/screens/order/widgets/ordering_option_selector.dart';
 import 'package:coffeeshop/presentation/screens/order/widgets/quantity_selector.dart';
@@ -332,7 +333,9 @@ class OrderingScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(5.w, 0, 5.w, 2.w),
               child: MaterialButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).pushNamed(MapScreen.roureName);
+                },
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
